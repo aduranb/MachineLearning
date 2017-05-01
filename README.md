@@ -1,6 +1,13 @@
 # MachineLearning
 A machine learning playaround
 
+A good Machine Learning programme for beginners. It illustrates image recognition by learning from a set of draw digits. The programme is able to determine how probable a digit is to be 0,1,...,9 according to its own sample, stored on a .txt file (no SQL).
 
-Playing around with image recognition: create a paint file, 8x8 square pixel, and play around with numbers. 
-It should be able to tell which number you wrote (from 0 to 9)
+Windows-designed Python programme using the following set of libraries:
+numpy
+matplotlib
+Pillow
+
+Submit comments if you see any bugs or improvements. Much appreciated.
+
+For more info, visit pythonprogamming.net
