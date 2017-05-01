@@ -4,7 +4,8 @@ import numpy as np
 from collections import Counter
 import operator
 import matplotlib.pyplot as plt
-
+from matplotlib import style
+style.use("ggplot")
 
 def what_num_is_this(file_path):
     matched_ar = []
@@ -36,6 +37,27 @@ def what_num_is_this(file_path):
             pass
     x = Counter(matched_ar)
     print "The number is", max(x.iteritems(), key=operator.itemgetter(1))[0]
+    graphX = []
+    graphY = []
 
+    ylimit = 0
+
+    for eachThing in x:
+        graphX.append(eachThing)
+        graphY.append(x[eachThing])
+        ylimit = x[eachThing]
+
+    fig = plt.figure()
+    ax1 = plt.subplot2grid((4,4),(0,0), rowspan=1, colspan=4)
+    ax2 = plt.subplot2grid((4,4),(1,0), rowspan=3, colspan=4)
+
+    ax1.imshow(iar)
+    ax2.bar(graphX,graphY, align = 'center')
+    plt.ylim(400)
+
+    xloc = plt.MaxNLocator(12)
+    ax2.xaxis.set_major_locator(xloc)
+
+    plt.show()
 
 what_num_is_this(computer_path + 'MachineLearning\\numbers\\6.5.png')
